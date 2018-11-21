@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Crystal Collector Game</title>
+   
+    <link rel="stylesheet" type="text/css" media="screen" href="assets/css/reset.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class ="jumbotron">
+            <h1>Crystals Collector Game</h1>        
+        </div>
+        <div class="card-header"> Instructions </h3>
+            <div class = "card-body">
+                <p class id = "GameInfo"> You will be given a random number at the start of the game. There are four crystals below. By clicking on a crystal you will add a specific number of points to your total score. The value of the crystal is hidden from you until you click on it.</p> 
+                <p> You win the game by matching your total score to the random number shown on the screen. You lose the game by going above that number. </p>
+                <p> Each time a new game is started a new random number will be shown and each crystal will get a new value. HAVE FUN!!!</p> 
+            </div>
+        </div>
+
+        <div class = "card-header"> Score: <span id ="score"></span>
+        </div>   
+        <div class = "card-header"> Wins: <span id="Wins"></span>
+        </div>
+        <div class = "card-header"> Losses: <span id="Losses"></span>
+       </div>
+       <div class = "card-body">
+
+        <div id="crystals">
+                <img class="crystal-image" id="crystal1" src="assets/images/crystal1.jpg" alt="crystals">
+                <img class="crystal-image" id="crystal2" src="assets/images/crystal2.jpg" alt="crystals">
+                <img class="crystal-image" id="crystal3" src="assets/images/crystal3.jpg" alt="crystals">
+                <img class="crystal-image" id="crystal4" src="assets/images/crystal4.jpg" alt="crystals">
+        </div>
+       </div>
+       <div class = "card-header"> Your Total Score: <span id = "total"></span>
+       </div>  
+   </div>
+   <script src="assets/javascript/game.js"></script>
+</body>
+</html>
