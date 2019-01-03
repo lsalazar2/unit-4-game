@@ -8,6 +8,10 @@
     flex-direction: row;
 }
 
+#GameInfo{
+    font-size: 18;
+}
+
 .jumbotron{
     background-color: teal;
 }

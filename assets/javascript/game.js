@@ -17,8 +17,10 @@ $(document).ready(function () {
   }
 
   function start_game() {
-    alert("Start game");
+    alert("New game");
     totalscore = 0;
+    $("#total").text(totalscore);
+
     randomNum = getRandomInt(19, 120); // Get a random number from 19-120 to compare total score with
     console.log("random #:" + randomNum);
 
@@ -80,7 +82,6 @@ start_game();
   crystalvalue = parseInt(crystalvalue);
 
   totalscore += crystalvalue;
-  console.log("updated total score: " + totalscore);
 
   $("#total").text(totalscore);
 
