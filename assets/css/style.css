@@ -3,6 +3,11 @@
     height: 150px;
 }
 
+#crystals{
+    display: flex;
+    flex-direction: row;
+}
+
 .jumbotron{
     background-color: teal;
 }

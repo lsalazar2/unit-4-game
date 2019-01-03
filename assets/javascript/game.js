@@ -17,51 +17,54 @@ $(document).ready(function () {
   }
 
   function start_game() {
+    alert("Start game");
     totalscore = 0;
-    wins = 0;
-    losses = 0;
-    alert("game started");
-
-    var randomNum = getRandomInt(19, 120); // Get a random number from 19-120 to compare total score with
-   
+    randomNum = getRandomInt(19, 120); // Get a random number from 19-120 to compare total score with
+    console.log("random #:" + randomNum);
 
     $("#score").text(randomNum); //store random number for current game's score
 
+    $("#crystals").empty();
+
     for (var i = 0; i < 4; i++) {
       var crystal = getRandomInt(1, 9); //get 4 random #s for crystals 1-4
-      var imageTag = $("<img>"); 
+      console.log("random crystal value #:" + crystal);
+      var imageCrystal = $("<img>"); 
+    // First each crystal will be given the class ".crystal-image" defined in CSS.
 
-      imageTag.addClass("crystal-image");
-      // Each imageCrystal will be given a src link to the crystal image
-      imageTag.attr("crystal-image", imageTag);
-      
-      imageTag.attr("src", image[i]);
+      imageCrystal.addClass("crystal-image");
 
-      imageTag.attr("data-crystal", crystal);
+      // Each imageCrystal will be given a src link to the crystal image defined in the image array above
+   
+      imageCrystal.attr("src", image[i]);
 
-      //imageTag.text(crystal[i]);
+      // Each imageCrystal will be given a data attribute called data-crystal.
+    
+      imageCrystal.attr("data-crystal", crystal);
 
-      $("#crystals").append(imageTag);
+    // Last, each crystal image (with classes and attributes) will get added to the page.
 
+      $("#crystals").append(imageCrystal);
+  
     }
   }
 
   function isgameover() {
+    console.log("isgameover call ");
     if (totalscore === randomNum) {
       wins++;
-      document.write("You won!!");
       $("#Wins").text(wins);
+      start_game();
     }
 
     else if (totalscore > randomNum) {
-      console.log("total score:" + totalscore, "randomnum:" + randomNum);
       losses++;
-      document.write("You lost");
-      $("#Losses").text("losses");
+      $("#Losses").text(losses);
+      start_game();
     }
     else {
       console.log("continue playing");
-      //keep playing
+      //keep playing wait for next click
     }
   }
 
@@ -70,16 +73,20 @@ start_game();
 
 //Press one of 4 crystal buttons
 
-$(".crystal-image").on("click", function () {
-  console.log("clicked on crystal");
-
+  $(document).on("click","img",function(){
   //Calculate score and put on webpage
-  var crystalvalue = $(this).attr("data-crystal");
+  var crystalvalue = ($(this).attr("data-crystal"));
+
   crystalvalue = parseInt(crystalvalue);
 
   totalscore += crystalvalue;
+  console.log("updated total score: " + totalscore);
+
   $("#total").text(totalscore);
+
   isgameover();
+
 });
+//check if you won or lost
 
 });
