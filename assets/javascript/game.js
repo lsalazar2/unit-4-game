@@ -17,7 +17,7 @@ $(document).ready(function () {
   }
 
   function start_game() {
-    alert("New game");
+    alert("New Game");
     totalscore = 0;
     $("#total").text(totalscore);
 
@@ -56,12 +56,14 @@ $(document).ready(function () {
     if (totalscore === randomNum) {
       wins++;
       $("#Wins").text(wins);
+      alert("You win!!");
       start_game();
     }
 
     else if (totalscore > randomNum) {
       losses++;
       $("#Losses").text(losses);
+      alert("You lost");
       start_game();
     }
     else {
