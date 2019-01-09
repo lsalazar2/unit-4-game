@@ -1,0 +1,17 @@
+.crystal-image {
+    width: 150px;
+    height: 150px;
+}
+
+#crystals{
+    display: flex;
+    flex-direction: row;
+}
+
+#GameInfo{
+    font-size: 18;
+}
+
+.jumbotron{
+    background-color: teal;
+}
